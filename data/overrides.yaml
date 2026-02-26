@@ -1,0 +1,11 @@
+# Optional manual overrides keyed by NCT ID.
+# Example:
+# NCT01234567:
+#   drug: "ExampleDrug"
+#   moa: "Selective inhibitor of ..."
+#   indication: "Disease X"
+#   patient_population: "Adults with ..."
+#   endpoints:
+#     primary: ["Change from baseline in ..."]
+#     secondary: ["Overall response rate"]
+#   endpoint_notes: "Add any nuance here."
