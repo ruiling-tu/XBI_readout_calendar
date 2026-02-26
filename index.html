@@ -1,19 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neon Nexus Gomoku</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>XBI Readout Calendar</title>
+    <style>
+      :root {
+        --bg: #0b0f1a;
+        --fg: #e6e8ef;
+        --muted: #b3b8c6;
+        --accent: #36d399;
+        --card: #141a2a;
+        --border: #26304a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(1200px 600px at 20% 0%, #14203a 0%, #0b0f1a 55%);
+        color: var(--fg);
+      }
+      main {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 64px 24px 80px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: 42px;
+        margin: 18px 0 10px;
+        line-height: 1.05;
+      }
+      p {
+        font-size: 18px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .card {
+        margin-top: 32px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      a.button {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 12px;
+        background: var(--accent);
+        color: #06110b;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a.link {
+        color: var(--fg);
+        text-decoration: underline;
+      }
+      .code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: #0f1524;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        margin-top: 12px;
+        word-break: break-all;
+      }
+      ul { padding-left: 18px; }
+      li { margin: 8px 0; color: var(--muted); }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script src="script.js" type="module"></script>
+    <main>
+      <span class="badge">XBI Readout Calendar</span>
+      <h1>Upcoming Clinical Readouts</h1>
+      <p>
+        This calendar tracks upcoming clinical readouts for XBI constituents using ClinicalTrials.gov primary
+        completion dates as the readout proxy, with recent results postings captured as separate events.
+      </p>
+
+      <div class="card">
+        <h2>Subscribe</h2>
+        <p>Use the link below to subscribe in Apple Calendar (or any ICS-compatible calendar).</p>
+        <div class="actions">
+          <a class="button" href="./calendar/biotech-readouts.ics">Download / Subscribe (.ics)</a>
+          <a class="link" href="https://github.com/ruiling-tu/XBI_readout_calendar">View Repository</a>
+        </div>
+        <div class="code">https://ruiling-tu.github.io/XBI_readout_calendar/calendar/biotech-readouts.ics</div>
+      </div>
+
+      <div class="card">
+        <h2>Apple Calendar Steps</h2>
+        <ul>
+          <li>Calendar → File → New Calendar Subscription…</li>
+          <li>Paste the ICS URL above</li>
+          <li>Set auto-refresh to daily</li>
+        </ul>
+      </div>
+    </main>
   </body>
 </html>
